@@ -21,5 +21,7 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='adminlte/index.html')),
     url(r'^login/$', TemplateView.as_view(template_name='adminlte/login.html')),
+    url(r'^new/$', TemplateView.as_view(template_name='adminlte/new_page.html')),
     path('admin/', admin.site.urls),
 ]
+
