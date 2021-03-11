@@ -1,5 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+import sqlite3  #imports sql 
+import random
+
 
 def register(request):
     # if this is a POST request we need to process the form data
@@ -7,8 +10,74 @@ def register(request):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        if request.POST['isTeacher'] == 'True':
-            isTeacher = True
+        isTeacher = False
+        try:
+            request.POST['isTeacher']
+            if request.POST['isTeacher'] == 'True':
+                isTeacher = True
+        except:
+            isTeacher = False
 
-
+        conn=sqlite3.connect("db.sqlite3") 
+        cursor=conn.cursor() #uses db.sqlite3 as the database
+        details = []
+        #NOW WE NEED TO ADD IT TO THE DATABASE
+        #find a way to append a different ID each time to details
+        #DO LOOKUP FOR LAST ID
+        #append last id 
+        insertid = cursor.lastrowid
+        insertid +=1
+        details.append(insertid) 
+        details.append(username)
+        details.append(email)
+        details.append(password) #appends stuff
+        details.append(isTeacher)
+        cursor.execute ("INSERT INTO adminlte3_users VALUES (?,?,?,?,?)", details)
+        conn.commit() #executes and commits inputing the values into the datbase
+        details = []
+        conn.close() #closes db.sqlite3
+        return render(request, 'adminlte/index.html') #if login works then send back to index page
     return render(request, 'adminlte/register.html')
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        conn=sqlite3.connect("db.sqlite3") 
+        cursor=conn.cursor() #uses db.sqlite3 as the database
+        cursor.execute("SELECT email FROM adminlte3_users WHERE email = ?", (email,))
+        print(cursor.fetchall)
+        if cursor.fetchall== email:
+            print("Email match")
+            cursor.execute("SELECT password FROM adminlte3_users WHERE email = ?",(email,))
+            if cursor.fetchall== password:
+                print("password match")
+                
+            #return render(request, 'adminlte/loginfail.html')
+        
+        conn.close() #closes db.sqlite3
+        
+    return render(request, 'adminlte/login.html')
+
+#ALSO WE NEED TO CREATE THE LOGIN REQUEST AND CHECK IT WITH THE DATABASE
+
+def Meeting(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        meetingStart = request.POST['meetingStart']
+        meetingEnd = request.POST['meetingEnd']
+        classId = request.POST['classId']
+        conn=sqlite3.connect("db.sqlite3") 
+        cursor=conn.cursor() #uses db.sqlite3 as the database
+        details = []
+        
+        details.append(random.randint(1,1000000)) #sends a random int because for some reason auto incriment isnt working??? ugh
+        details.append(meetingStart)
+        details.append(meetingEnd)
+        details.append(classId) #appends stuff
+        cursor.execute ("INSERT INTO adminlte3_users VALUES (?,?,?,?)", details)
+        conn.commit() #executes and commits inputing the values into the datbase
+        details = []
+        conn.close() #closes db.sqlite3
+        return render(request, 'adminlte/index.html') #if login works then send back to index page
+    return render(request, 'adminlte/zoom.html')

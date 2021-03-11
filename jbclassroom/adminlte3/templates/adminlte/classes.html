@@ -1,5 +1,122 @@
 {% extends 'adminlte/base.html' %}
 
 {% block content %}
-these are your lessons
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f1f1f1;
+  }
+  
+  .header {
+      padding: 30px;
+      font-size: 40px;
+      text-align: center;
+      background: white;
+  }
+  
+  .rightcolumn {   
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+  }
+  
+  .leftcolumn {
+      float: left;
+      width: 75%;  
+  }
+  
+  .attachment {
+      background-color: #aaa;
+      width: 100%;
+      padding: 20px;
+  }
+  
+  .card {
+       background-color: white;
+       padding: 20px;
+       margin-top: 20px;
+  }
+  
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button1 {background-color: slateblue;} 
+  .button2 {background-color: #008CBA;} 
+  
+  </style>
+  </head>
+  <body>
+  
+  <div class="header">
+    <h2> Computer Science </h2>
+  </div>
+  
+  <div class="row">
+    <div class ="leftcolumn">
+
+      <div class="card">
+      <button class="button button2">Join meeting! </button>
+  </div>
+
+      <div class="card">
+        <button class="button button1">Add to Blog </button>
+        <form action="/action_page.php">
+        <textarea id="Newport" name="new_post" rows="5" cols="143">
+      </textarea>
+      </form>
+      </div>
+
+      <div class="card">
+        <h2> Class with Mr. B </h2>
+        <h5> 10.03.21 </h5>
+        <div class ="attachment">Attachment</div>
+        <p> <small> Instructions set by teacher </small> </p>
+      </div>
+
+      <div class="card">
+        <h2> Class with Mr. O </h2>
+        <h5> 12.03.21 </h5>
+        <div class ="attachment">Attachment</div>
+        <p> <small> Instructions set by teacher </small> </p>
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2> Upcoming assignments </h2>
+        <div class ="attachment"> Assignment 1</div>
+        <h6>  </h6>
+        <div class ="attachment"> Assignment 2</div>
+      </div>
+      <div class="card">
+        <h3> Class mates </h3>
+        <p> Hady <br> Max <br> Yuma <br> Renée </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </body>
+    
+
 {% endblock %}
