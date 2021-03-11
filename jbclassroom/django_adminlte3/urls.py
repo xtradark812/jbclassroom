@@ -26,6 +26,7 @@ urlpatterns = [
     #url(r'^register/$', TemplateView.as_view(template_name='adminlte/register.html')),
     url(r'^classes/$', TemplateView.as_view(template_name='adminlte/classes.html')),
     url(r'^teachers/$', TemplateView.as_view(template_name='adminlte/teachers.html')),
+    url(r'^studentdashboard/$', TemplateView.as_view(template_name='adminlte/student_dashboard.html')),
     path('admin/', admin.site.urls),
     path('register/', include('adminlte3.urls'))
 ]
