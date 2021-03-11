@@ -25,8 +25,8 @@ def register(request):
         #find a way to append a different ID each time to details
         #DO LOOKUP FOR LAST ID
         #append last id 
+        lastrow = cursor.execute('select * from adminlte3_users').fetchall()[-1]
         insertid = cursor.lastrowid
-        insertid +=1
         details.append(insertid) 
         details.append(username)
         details.append(email)
@@ -53,8 +53,8 @@ def login(request):
             if cursor.fetchall== password:
                 #RIGHT HERE LOOK OVER HERE!!!!!!
                 #This is where we would (if we had time) assign a token to a user so they can only see the classes/pages they are in... BUT we ran out of time and trying to complete this would not have been possible.
-        
-        conn.close() #closes db.sqlite3
+                print("Password match")
+            conn.close() #closes db.sqlite3
         
     return render(request, 'adminlte/login.html')
 
