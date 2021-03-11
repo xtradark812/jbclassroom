@@ -27,6 +27,6 @@ urlpatterns = [
     url(r'^exampleclass/$', TemplateView.as_view(template_name='adminlte/classes.html')),
     url(r'^teacherdashboard/$', TemplateView.as_view(template_name='adminlte/teachers.html')),
     url(r'^studentdashboard/$', TemplateView.as_view(template_name='adminlte/student_dashboard.html')),
-    path('admin/', admin.site.urls),
-    path('a/', include('adminlte3.urls')),
+    path('admin/', admin.site.urls), #this is for the admin side of the website, ignore this.
+    path('a/', include('adminlte3.urls')), #THIS LINKS TO THE OTHER urls.py FILE MEANT FOR PAGES WHICH REQUIRE USER INPUT AND DATABASE LOOKUPS
 ]
