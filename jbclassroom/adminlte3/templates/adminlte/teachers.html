@@ -1,5 +1,4 @@
 {% extends 'adminlte/base.html' %}
-
 {% block content %}
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,62 +6,62 @@
     * {
         box-sizing: border-box;
     }
-        /* Add a gray background color with some padding */
+            /* Add a gray background color with some padding */
     body {
         font-family: Arial;
         padding: 20px;
         background: #f1f1f1;
     }
-        /* Header/Blog Title */
+            /* Header/Blog Title */
     .header {
         padding: 30px;
         font-size: 40px;
         text-align: center;
         background: white;
     }
-        
-    
+           
     .rightcolumn {   
         float: left;
-        width: 30%;
-        Padding-right: 20px;
+        width: 50%;
+        Padding-right: 30px;
     }
-       
+           
     .leftcolumn {
         float: left;
-        width: 70%;
-            
-            
+        width: 50%;
+                
+                
     }
     .next {
         float: left;
         width: 25%;
         Padding-right: 30px;
-            
+                
+                
     }
     .attachment {
         background-color: #aaa;
         width: 100%;
         padding: 20px;
     }
-        
-        /* Add a card effect for articles */
+            
+            /* Add a card effect for articles */
     .card {
         background-color: white;
         padding: 20px;
         margin-top: 20px;
     }
-        
+            
         /* Clear floats after the columns */
     .row:after {
         content: "";
         display: table;
         clear: both;
     }
-        
-        
-        
-        
+            
+            
+            
+            
     .button {
         border: none;
         color: white;
@@ -76,54 +75,54 @@
     }
     .button1 {background-color: slateblue;} 
     .button2 {background-color: #008CBA;} 
-        
-        
-        
+            
+            
+            
     </style>
     </head>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
     <body>
     
     <div class="header">
-      <h2> This site is in development! </h2>
+      <h2> Classrooms </h2>
     </div>
-    <br />
-    <br />
-    This website is in development. We created this index page for people to acsess and test pages that are not acsessible from the side bar or any other button on the site. Please enjoy and if you find any bugs, let us know on GitHub
-    <br />
-    <br />
-    
-    <div class="next">
-        <div class="card">
-          <h2> Login Page </h2>
-          <p> Login page for the website </p>
-          <button class="button button1">Click Here </button> 
-        </div>
+    <div class="row">
+      <div class="rightcolumn">
+      <div class="card">
+        <button class="button button2"> Create a class </button>
       </div>
+      </div>
+      <div class="leftcolumn">
+      <div class="card">
+        <button class="button button2"> Create a meeting </button>  
+      </div>
+      </div>
+    </div>
+    <h1> 	</h1>
     
-    
-    
-    
-    
-    
+        <!-- some if statement saying if they have the class-->
     <div class="next">
         <div class="card">
-          <h2> Register page </h2>
-          <p> The register page for the website </p>
-            <button class="button button1">Click here </button> 
+          <h2> Y11 </h2>
+          <p> GCSE Y2 </p>
+            <button class="button button1"> Class 1 </button> <!-- add class later-->
         </div>
     </div>
-
-
+        
+    <div class="next">
+        <div class="card">
+          <h2> Y12 </h2>
+          <p> Mechanics </p>
+            <button class="button button1"> Class 2 </button> <!-- add class later-->
+        </div>
+    </div>
+        
+    <div class="next">
+        <div class="card">
+          <h2> Y13 </h2>
+          <p> Stats </p>
+            <button class="button button1"> Class 3 </button> <!-- add class later-->
+        </div>
+    </div>
+    </body>
 {% endblock %}
-

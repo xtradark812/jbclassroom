@@ -5,7 +5,7 @@
      <!-- Brand Logo -->
     {% block logo %}
         <a href="/" class="brand-link">
-            <img src="{%static 'admin-lte/dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="{%static 'admin-lte/dist/img/image0.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             {% block logo_text %}<span class="brand-text font-weight-light">JB Classroom </span>{% endblock %} <!--added title (hady)-->
         </a>
     {% endblock %}
@@ -35,18 +35,24 @@
 
             {% block nav_links %}
                 <li class="nav-item">
-                    <a href="/classes" class="nav-link">
+                    <a href="/exampleclass" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i> 
-                        <p>My Classes</p>
+                        <p>EXAMPLE CLASS</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                        <a href="#" class="nav-link"> <!--removed active navlink hady-->
+                 <li class="nav-item">
+                        <a href="/studentdashboard" class="nav-link"> 
                             <i class="nav-icon fas fa-tachometer-alt"></i> 
-                            <p>Example link active</p>
+                            <p>Student Dashbaord</p>
                         </a>
-                    </li>
-                <li class="nav-item has-tree-view ">
+                </li> 
+                <li class="nav-item">
+                    <a href="/teacherdashboard" class="nav-link"> 
+                        <i class="nav-icon fas fa-tachometer-alt"></i> 
+                        <p>Teacher Dashbaord</p>
+                    </a>
+                </li> 
+                <!-- <li class="nav-item has-tree-view ">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-object-group"></i> <p>Sub menu</p>
                         <p><i class="right fas fa-angle-left"></i>
@@ -59,12 +65,12 @@
                                     </a>
                                 </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"> <!--removed active navlink hady-->
+                            <a href="#" class="nav-link"> 
                                 <i class="nav-icon fas fa-user"></i> Another link
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             {% endblock nav_links %}
             {% endblock nav_links_outer %}
             </ul>
