@@ -22,11 +22,11 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='adminlte/index.html')),
-    url(r'^login/$', TemplateView.as_view(template_name='adminlte/login.html')),
+    #url(r'^login/$', TemplateView.as_view(template_name='adminlte/login.html')),
     #url(r'^register/$', TemplateView.as_view(template_name='adminlte/register.html')),
     url(r'^classes/$', TemplateView.as_view(template_name='adminlte/classes.html')),
     url(r'^teachers/$', TemplateView.as_view(template_name='adminlte/teachers.html')),
     url(r'^studentdashboard/$', TemplateView.as_view(template_name='adminlte/student_dashboard.html')),
     path('admin/', admin.site.urls),
-    path('register/', include('adminlte3.urls'))
+    path('a/', include('adminlte3.urls')),
 ]

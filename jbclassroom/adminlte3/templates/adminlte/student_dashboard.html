@@ -1,13 +1,162 @@
 {% extends 'adminlte/base.html' %}
 
 {% block content %}
-
-
-
-<div style="width:150px;height:150px;line-height:3em;overflow:scroll;padding:5px;background-color:#FCFADD;color:#714D03;border:4px double #ffffff;"> <!-- Scroll bar for zoom-->
-    Zoom links. <!-- insert the zoom links later-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+        /* Add a gray background color with some padding */
+    body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f1f1f1;
+    }
+        /* Header/Blog Title */
+    .header {
+        padding: 30px;
+        font-size: 40px;
+        text-align: center;
+        background: white;
+    }
+        
+    
+    .rightcolumn {   
+        float: left;
+        width: 30%;
+        Padding-right: 20px;
+    }
+       
+    .leftcolumn {
+        float: left;
+        width: 70%;
+            
+            
+    }
+    .next {
+        float: left;
+        width: 25%;
+        Padding-right: 30px;
+            
+    }
+    .attachment {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+    }
+        
+        /* Add a card effect for articles */
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+    }
+        
+        /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+        
+        
+        
+        
+    .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button1 {background-color: slateblue;} 
+    .button2 {background-color: #008CBA;} 
+        
+        
+        
+    </style>
+    </head>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <body>
+    
+    <div class="header">
+      <h2> My Classes </h2>
     </div>
-
+    
+    
+    <div class="row">
+    
+      <div class="rightcolumn">
+        <div class="card">
+        <h2> Upcoming assignments </h2>
+        <div class ="attachment"> Upcoming assignment </div>
+        </div>
+      </div>
+    
+    
+      <div class="leftcolumn">
+      <div class="card">
+        <button class="button button2"> Join a class </button>  
+      </div>
+      </div>
+    
+    
+    </div>
+    
+    
+    <div class="next">
+        <div class="card">
+          <h2> Computer Science </h2>
+          <p> Mr. Balcombe </p>
+          <button class="button button1">Class 1 </button> <!-- add class later-->
+        </div>
+      </div>
+    
+    
+    <!-- some if statement saying if they have the class-->
+    
+    
+    
+    <div class="next">
+        <div class="card">
+          <h2> Computer Science </h2>
+          <p> Mr. O'Connor </p>
+            <button class="button button1">Class 1 </button> <!-- add class later-->
+        </div>
+    </div>
+    
+    <div class="next">
+        <div class="card">
+          <h2> Physics </h2>
+          <p> Mr.Saranam </p>
+            <button class="button button1">Class 2 </button> <!-- add class later-->
+        </div>
+    </div>
+    
+    <div class="next">
+        <div class="card">
+          <h2> Maths </h2>
+          <p> Mr. Wall </p>
+            <button class="button button1">Class 3 </button> <!-- add class later-->
+        </div>
+    </div>
+    </div>
+    </body>
 
 {% endblock %}
 
