@@ -1,12 +1,129 @@
 {% extends 'adminlte/base.html' %}
 
 {% block content %}
-hello this is a test
-classes/
-teachers/
-studentdashboard/
-register/
-login/
-meeting/
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+        /* Add a gray background color with some padding */
+    body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f1f1f1;
+    }
+        /* Header/Blog Title */
+    .header {
+        padding: 30px;
+        font-size: 40px;
+        text-align: center;
+        background: white;
+    }
+        
+    
+    .rightcolumn {   
+        float: left;
+        width: 30%;
+        Padding-right: 20px;
+    }
+       
+    .leftcolumn {
+        float: left;
+        width: 70%;
+            
+            
+    }
+    .next {
+        float: left;
+        width: 25%;
+        Padding-right: 30px;
+            
+    }
+    .attachment {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+    }
+        
+        /* Add a card effect for articles */
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+    }
+        
+        /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+        
+        
+        
+        
+    .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button1 {background-color: slateblue;} 
+    .button2 {background-color: #008CBA;} 
+        
+        
+        
+    </style>
+    </head>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <body>
+    
+    <div class="header">
+      <h2> This site is in development! </h2>
+    </div>
+    <br />
+    <br />
+    This website is in development. We created this index page for people to acsess and test pages that are not acsessible from the side bar or any other button on the site. Please enjoy and if you find any bugs, let us know on GitHub
+    <br />
+    <br />
+    
+    <div class="next">
+        <div class="card">
+          <h2> Login Page </h2>
+          <p> Login page for the website </p>
+          <button class="button button1">Click Here </button> 
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+    <div class="next">
+        <div class="card">
+          <h2> Register page </h2>
+          <p> The register page for the website </p>
+            <button class="button button1">Click here </button> 
+        </div>
+    </div>
+
 
 {% endblock %}
+

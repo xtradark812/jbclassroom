@@ -30,17 +30,18 @@ def register(request):
         details.append(insertid) 
         details.append(username)
         details.append(email)
-        details.append(password) #appends stuff
-        details.append(isTeacher)
-        cursor.execute ("INSERT INTO adminlte3_users VALUES (?,?,?,?,?)", details)
+        details.append(password) 
+        details.append(isTeacher)#appends record into array
+        cursor.execute ("INSERT INTO adminlte3_users VALUES (?,?,?,?,?)", details) #inserts array into database
         conn.commit() #executes and commits inputing the values into the datbase
         details = []
         conn.close() #closes db.sqlite3
         return render(request, 'adminlte/index.html') #if login works then send back to index page
     return render(request, 'adminlte/register.html')
 
+
 def login(request):
-    if request.method == 'POST':
+    if request.method == 'POST':# if this is a POST request we need to process the form data
         email = request.POST['email']
         password = request.POST['password']
         conn=sqlite3.connect("db.sqlite3") 
@@ -48,25 +49,23 @@ def login(request):
         cursor.execute("SELECT email FROM adminlte3_users WHERE email = ?", (email,))
         print(cursor.fetchall)
         if cursor.fetchall== email:
-            print("Email match")
             cursor.execute("SELECT password FROM adminlte3_users WHERE email = ?",(email,))
             if cursor.fetchall== password:
-                print("password match")
-                
-            #return render(request, 'adminlte/loginfail.html')
+                #RIGHT HERE LOOK OVER HERE!!!!!!
+                #This is where we would (if we had time) assign a token to a user so they can only see the classes/pages they are in... BUT we ran out of time and trying to complete this would not have been possible.
         
         conn.close() #closes db.sqlite3
         
     return render(request, 'adminlte/login.html')
 
-#ALSO WE NEED TO CREATE THE LOGIN REQUEST AND CHECK IT WITH THE DATABASE
+
 
 def Meeting(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        meetingStart = request.POST['meetingStart']
-        meetingEnd = request.POST['meetingEnd']
-        classId = request.POST['classId']
+        meetingStart = request.POST['meetingstart']
+        meetingEnd = request.POST['meetingend']
+        className = request.POST['class']
         conn=sqlite3.connect("db.sqlite3") 
         cursor=conn.cursor() #uses db.sqlite3 as the database
         details = []
