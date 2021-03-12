@@ -37,6 +37,7 @@
       background-color: #aaa;
       width: 100%;
       padding: 20px;
+      Cursor:pointer;
   }
   
   .card {
@@ -61,9 +62,14 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    Width:100%;
+    transition-duration: 0.4s;
   }
-  .button1 {background-color: slateblue;} 
-  .button2 {background-color: #008CBA;} 
+
+  .button1 {background-color: slateblue; border: 2px solid slateblue;} 
+  .button1:hover {background-color: white; color:black; border: 2px solid slateblue;}
+  .button2 {background-color: #008CBA;  border: 2px solid #008CBA;} 
+  .button2:hover {background-color: white; color:black; border: 2px solid #008CBA;}
   
   </style>
   </head>
@@ -77,11 +83,11 @@
     <div class ="leftcolumn">
 
       <div class="card">
-      <button class="button button2">Join meeting! </button>
+      <button class="button button2" onclick="alert('Joining meeting..')">Join meeting! </button>
   </div>
 
       <div class="card">
-        <button class="button button1">Add to Blog </button>
+        <button class="button button1" onclick="alert('Adding to blog..')">Add to Blog </button>
         <form action="/action_page.php">
         <textarea id="Newport" name="new_post" rows="5" cols="143">
       </textarea>
@@ -117,6 +123,7 @@
   </div>
   </div>
   </body>
+
     
 
 {% endblock %}

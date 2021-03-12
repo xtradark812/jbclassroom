@@ -16,7 +16,7 @@
             <div class="card-body login-card-body">
                 {% block login_errors %}
                     {% if form.errors and not form.non_field_errors %}
-                        <p class="alert alert-danger">
+                        <p class="alert alert-danger"> <!-- error if login goes wrong-->
                             {% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}
                                 {% trans "Please correct the errors below." %}{% endif %}
                         </p>
@@ -35,13 +35,13 @@
                     <form name="login" action = "/a/login/" method="post">
                         {% csrf_token %}
                         {% if message %}
-                            <p class="login-box-msg" style="color: red;">{{ message }}</p>
+                            <p class="login-box-msg" style="color: red;">{{ message }}</p> <!-- error message -->
                         {% endif %}
                         <div class="input-group mb-3">
                           <input name="email" type="email" class="form-control" placeholder="{% trans 'Email' %}">
                           <div class="input-group-append">
                             <div class="input-group-text">
-                              <span class="fas fa-envelope"></span>
+                              <span class="fas fa-envelope"></span> <!-- email-->
                             </div>
                           </div>
                         </div>
@@ -49,7 +49,7 @@
                           <input name="password" type="password" class="form-control" placeholder="{% trans 'Password' %}">
                           <div class="input-group-append">
                             <div class="input-group-text">
-                              <span class="fas fa-lock"></span>
+                              <span class="fas fa-lock"></span> <!-- password-->
                             </div>
                           </div>
                         </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-8">
                                 <div class="icheck-primary">
-                                    <input type="checkbox" id="remember">
+                                    <input type="checkbox" id="remember"> <!-- checkbox for remember me -->
                                     <label for="remember">
                                         Remember Me
                                     </label>
@@ -77,18 +77,18 @@
                 <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
                     <a href="#" class="btn btn-block btn-primary">
-                      <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                      <i class="fab fa-facebook mr-2"></i> Sign in using Facebook <!-- allows user to sign with facebook -->
                     </a>
                     <a href="#" class="btn btn-block btn-danger">
-                      <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                      <i class="fab fa-google-plus mr-2"></i> Sign in using Google+ <!-- allows user to sign with google -->
                     </a>
                 </div>
                 <!-- /.social-auth-links -->
                 <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    <a href="forgot-password.html">I forgot my password</a> <!-- if they forget their password -->
                 </p>
                 <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
+                    <a href="register.html" class="text-center">Register a new membership</a> <!-- links to the register page -->
                 </p>
 
             </div>
