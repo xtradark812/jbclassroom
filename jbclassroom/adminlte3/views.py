@@ -25,9 +25,10 @@ def register(request):
         #find a way to append a different ID each time to details
         #DO LOOKUP FOR LAST ID
         #append last id 
-        lastrow = cursor.execute('select * from adminlte3_users').fetchall()[-1]
-        insertid = cursor.lastrowid
-        details.append(insertid) 
+        cursor.execute("SELECT COUNT(*) FROM adminlte3_users")
+        number = cursor.fetchone()[0] #Fetches the number of fields of the table
+        idS = int(number) + 1 #adds one to the number of fields to append as the primary key
+        details.append(idS)
         details.append(username)
         details.append(email)
         details.append(password) 
@@ -71,7 +72,6 @@ def Meeting(request):
         cursor=conn.cursor() #uses db.sqlite3 as the database
         details = []
         
-        details.append(random.randint(1,1000000)) #sends a random int because for some reason auto incriment isnt working??? ugh
         details.append(meetingStart)
         details.append(meetingEnd)
         details.append(classId) #appends stuff
@@ -80,4 +80,5 @@ def Meeting(request):
         details = []
         conn.close() #closes db.sqlite3
         return render(request, 'adminlte/index.html') #if login works then send back to index page
+
     return render(request, 'adminlte/zoom.html')

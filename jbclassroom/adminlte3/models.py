@@ -10,16 +10,16 @@ class Users(models.Model): #Creates the table to store user records
     isTeacher = models.BooleanField(default=False)
 
 class Classes(models.Model): #Creates the table to store class records
-    id = models.IntegerField(primary_key=True)
+    auto_increment_id = models.AutoField(primary_key=True)
     className = models.CharField(max_length=64)
 
 class StudentsInClass(models.Model): #Links the student and class tables to show which students are in which class
-    id = models.IntegerField(primary_key=True)
+    auto_increment_id = models.AutoField(primary_key=True)
     classId = models.ForeignKey(Classes,on_delete=models.CASCADE)
     studentId = models.ForeignKey(Users,on_delete=models.CASCADE)
 
 class ZoomMeeting(models.Model): #Creates the table to store all scheduled zoom meetings
-    id = models.IntegerField(primary_key=True)
+    auto_increment_id = models.AutoField(primary_key=True)
     meetingStart = models.DateTimeField()
     meetingEnd = models.DateTimeField()
     classId = models.ForeignKey(Classes,on_delete=models.CASCADE)
