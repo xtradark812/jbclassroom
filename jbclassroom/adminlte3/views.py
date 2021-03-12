@@ -51,9 +51,9 @@ def login(request):
         if cursor.fetchall== email:
             cursor.execute("SELECT password FROM adminlte3_users WHERE email = ?",(email,))
             if cursor.fetchall== password:
+                pass
                 #RIGHT HERE LOOK OVER HERE!!!!!!
                 #This is where we would (if we had time) assign a token to a user so they can only see the classes/pages they are in... BUT we ran out of time and trying to complete this would not have been possible.
-        
         conn.close() #closes db.sqlite3
         
     return render(request, 'adminlte/login.html')
