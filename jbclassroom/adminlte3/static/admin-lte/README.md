@@ -39,7 +39,7 @@ _**Important Note**: You needed to add separately cdn links for plugins in your 
 ```
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+<link  href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
 ```
 
 ### Using The Command Line:
